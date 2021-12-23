@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
-import FileUpload from "./components/FileUpload";
-import Response from "./components/Response";
 import Signup from "./components/Signup";
+import Main from "./components/Main";
+import CameraView from "./components/CameraView";
 import Error from "./components/Error";
 import Navbar from "./components/Navbar";
 
@@ -51,10 +51,10 @@ function App() {
               }
             ></Route>
             <Route path="/error" element={<Error />} />
-            <Route path="/upload" element={<FileUpload />}></Route>
+            <Route path="/main" element={<Main />}></Route>
             <Route
-              path="/response"
-              element={<Response setError={setError} />}
+              path="/camview"
+              element={<CameraView setError={setError} />}
             ></Route>
           </Routes>
         </div>

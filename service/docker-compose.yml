@@ -9,12 +9,12 @@ services:
     ports:
       - 63306:3306
     volumes:
-      - ~/apps/04_itg_db:/var/lib/mysql
+      - ~/apps/beekeeping:/var/lib/mysql
       - "./setup.sql:/docker-entrypoint-initdb.d/setup.sql"
     environment:
       - MYSQL_USER=admin
       - MYSQL_PASSWORD=pass123
-      - MYSQL_DATABASE=chat_data_db
+      - MYSQL_DATABASE=beekeeping
       - MYSQL_ROOT_PASSWORD=pswd
       - TZ="Asia/Seoul"
 

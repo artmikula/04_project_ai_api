@@ -62,51 +62,62 @@ function SignupPage({ error, setError, userAdded, setUserAdded }) {
   };
 
   return (
-    <div className="signupCont">
+    <div className="login">
+      <h1>가입하기</h1>
       {error !== "" ? <div className="error">{error}</div> : ""}
       {userAdded !== "" ? <div className="message">{userAdded}</div> : ""}
-      <div className="signup">
-        <form id="signupForm" autoComplete="off">
+      <div id="box2">
+        <form id="loginform" autoComplete="off">
+          <label>아이디</label>
           <input
             type="text"
             name="username"
             id="username"
-            placeholder="ID"
+            placeholder="아이디 입력"
             onChange={(e) =>
               setNewUserData({ ...newUserData, username: e.target.value })
             }
           />
+          <label>비밀번호</label>
           <input
             type="password"
             name="password"
             id="password"
-            placeholder="Password"
+            placeholder="비밀번호 입력"
             onChange={(e) =>
               setNewUserData({ ...newUserData, password: e.target.value })
             }
           />
+          <label>비밀번호 확인</label>
           <input
             type="password"
             name="rePassword"
             id="rePassword"
-            placeholder="Confirm password"
+            placeholder="비밀번호 확인"
             onChange={(e) =>
               setNewUserData({ ...newUserData, rePassword: e.target.value })
             }
           />
-          <input
-            className="button2"
-            type="button"
-            value="취소"
-            onClick={(e) => cancelSignup(e)}
-          />
-          <input
-            className="button2"
-            type="button"
-            value="가입하기"
-            onClick={(e) => signUpHandler(e)}
-          />
         </form>
+      </div>
+      <div className="buttons">
+        <input
+          className="button2"
+          type="button"
+          value="가입하기"
+          onClick={(e) => signUpHandler(e)}
+        />
+        <input
+          className="button2"
+          type="button"
+          value="취소"
+          onClick={(e) => cancelSignup(e)}
+        />
+      </div>
+      <div className="info">
+        <p>Copyright Thinkforbl, All Rights Reserved</p>
+        <a href="/">개인 정보 보호 정책</a>
+        <p>Ver 2.0</p>
       </div>
     </div>
   );

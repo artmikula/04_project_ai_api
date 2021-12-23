@@ -1,5 +1,4 @@
 import React from "react";
-import userIcon from "./user_icon.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
@@ -17,6 +16,7 @@ function Login({ error, setError, setUser, userAdded }) {
 
   const loginHandler = (e) => {
     e.preventDefault();
+    // navigate("/main");
     loginUser();
   };
 
@@ -29,7 +29,7 @@ function Login({ error, setError, setUser, userAdded }) {
           username: loginInfo.username,
         });
         setError(null);
-        navigate("/upload");
+        navigate("/main");
       } else {
         setError("Incorrect password");
       }
@@ -50,44 +50,51 @@ function Login({ error, setError, setUser, userAdded }) {
 
   return (
     <div className="login">
-      <div className="top">
-        <img src={userIcon} alt="user_icon" id="userIcon" />
-      </div>
-      <div className="bottom">
+      <h1>로그인</h1>
+      {error !== "" ? <div className="error">{error}</div> : ""}
+      {userAdded !== "" ? <div className="message">{userAdded}</div> : ""}
+      <div id="box1">
         <form id="loginform" autoComplete="off">
-          {error !== "" ? <div className="error">{error}</div> : ""}
-          {userAdded !== "" ? <div className="message">{userAdded}</div> : ""}
+          <label>아이디</label>
           <input
             type="text"
             name="username"
             id="username"
-            placeholder="ID"
+            placeholder="아이디 입력"
             onChange={(e) =>
               setLoginInfo({ ...loginInfo, username: e.target.value })
             }
           />
+          <label>패스워드</label>
           <input
             type="password"
             name="password"
             id="password"
-            placeholder="Password"
+            placeholder="패스워드 입력"
             onChange={(e) =>
               setLoginInfo({ ...loginInfo, password: e.target.value })
             }
           />
-          <input
-            className="button2"
-            type="button"
-            value="로그인"
-            onClick={(e) => loginHandler(e)}
-          />
-          <input
-            className="button2"
-            type="button"
-            value="가입하기"
-            onClick={(e) => signUpUser(e)}
-          />
         </form>
+      </div>
+      <div className="buttons">
+        <input
+          className="button2"
+          type="button"
+          value="로그인"
+          onClick={(e) => loginHandler(e)}
+        />
+        <input
+          className="button2"
+          type="button"
+          value="가입하기"
+          onClick={(e) => signUpUser(e)}
+        />
+      </div>
+      <div className="info">
+        <p>Copyright Thinkforbl, All Rights Reserved</p>
+        <a href="/">개인 정보 보호 정책</a>
+        <p>Ver 2.0</p>
       </div>
     </div>
   );

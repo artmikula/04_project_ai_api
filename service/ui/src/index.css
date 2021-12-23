@@ -22,22 +22,18 @@ code {
 }
 
 nav {
-  width: 1000px;
+  width: 75vw;
   height: 60px;
-  background-color: #1abc9c;
   margin: 25px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-right: 30px;
+  background-color: grey;
 }
 
 nav h1 {
   color: white;
-}
-
-h2 {
-  color: grey;
 }
 
 .hamburger {
@@ -56,37 +52,31 @@ h2 {
 }
 
 .login {
-  height: 500px;
+  height: 600px;
+  width: 800px;
+  box-shadow: 4px 8px 10px 3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#box1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0e0e0;
   width: 300px;
-  outline: 1px solid black;
-  box-shadow: 5px 10px 15px 4px rgba(0, 0, 0, 0.28);
+  height: 200px;
 }
 
-.mainCont {
-  height: 50vh;
-  /* width: 50vw; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.top {
-  height: 55%;
-  background-color: #6bb9ed;
+#box2 {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.bottom {
-  height: 45%;
-  background-color: #fafafa;
-  width: 100%;
-}
-
-#userIcon {
-  height: 125px;
-  width: 115px;
+  background-color: #e0e0e0;
+  width: 300px;
+  height: 260px;
 }
 
 #loginform {
@@ -95,104 +85,14 @@ h2 {
   align-items: center;
 }
 
-#loginform input[type="button"] {
-  margin: 5px;
-  border: none;
-  padding: 5px;
-  width: 100px;
-  color: #6bb9ed;
-  font-weight: bold;
-  font-size: 1em;
-}
-
-#loginform input[type="button"]:hover {
-  background-color: grey;
-}
-
 #username,
 #password,
 #rePassword {
+  outline: 1px solid red;
   border: none;
   padding: 10px;
   margin: 5px;
   outline: 1px solid grey;
-}
-
-#fileUpload {
-  width: 500px;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-#fileUpload button,
-.button3 {
-  height: 40px;
-  border: none;
-  min-width: 100px;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
-#fileUpload button:hover,
-.button3:hover {
-  background-color: rgb(211, 211, 211);
-  cursor: pointer;
-}
-
-#fileUpload input {
-  outline: 1px solid grey;
-  cursor: pointer;
-}
-
-table.GeneratedTable {
-  width: 60%;
-  background-color: #ffffff;
-  border-collapse: collapse;
-  border-color: #6b6b6b;
-  border-style: solid;
-  color: #000000;
-}
-
-table.GeneratedTable td,
-table.GeneratedTable th {
-  border-color: #6b6b6b;
-  border-style: solid;
-  padding: 3px;
-}
-
-table.GeneratedTable thead {
-  background-color: #9d9c9b;
-}
-
-table.GeneratedTable {
-  width: 100%;
-  background-color: #ffffff;
-  border-collapse: collapse;
-  border-color: #6b6b6b;
-  border-style: solid;
-  color: #000000;
-}
-
-table.GeneratedTable td,
-table.GeneratedTable th {
-  border-color: #6b6b6b;
-  border-style: solid;
-  padding: 3px;
-}
-
-table.GeneratedTable thead {
-  background-color: #9d9c9b;
-}
-
-.tables {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px;
 }
 
 #response {
@@ -207,24 +107,6 @@ table.GeneratedTable thead {
   margin: 40px;
 }
 
-#table3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#table3 h3 {
-  max-width: 200px;
-  outline: 2px solid grey;
-  padding: 15px;
-}
-
-.box {
-  outline: 2px solid grey;
-  justify-content: center;
-  align-items: center;
-}
-
 #topRight {
   height: 100%;
   width: 20%;
@@ -237,42 +119,112 @@ table.GeneratedTable thead {
   border: none;
   padding: 5px;
   min-width: 100px;
-  color: #6bb9ed;
   font-weight: bold;
   font-size: 1em;
   border-radius: 5px;
+  height: 40px;
+  background-color: #3498db;
+  color: #fff;
 }
 
 .button2:hover {
-  background-color: rgb(211, 211, 211);
+  background-color: #57bcff;
 }
 
-.error h2 {
-  color: red;
-}
 .error {
   color: red;
   text-align: center;
 }
 
-.signupCont {
-  height: 400px;
-  width: 300px;
+.info {
+  text-align: center;
+}
+#mainCont2 {
+  width: 60vw;
+  min-height: 600px;
+  /* outline: 1px solid blue; */
+  text-align: center;
 }
 
-.signup {
-  outline: 1px solid grey;
+#mainTop {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.topBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 280px;
+  width: 280px;
+}
+.mainChart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100%;
+  width: 100%;
+}
+
+.selection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100px;
+  width: 200px;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  border: 10px solid #e5e5e5;
+  color: #ff2b2b;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 64px;
+  font-weight: bold;
 }
 
-#signupForm {
+#viewCam {
+  width: 200px;
+  height: 100px;
+  background-color: #ff2b2b;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.selectChoice {
+  width: 150px;
+  height: 40px;
+  vertical-align: middle;
+  outline: 1px solid rgb(211, 211, 211);
+  border-radius: 5px;
+}
+
+.camVideoView {
+  width: 800px;
+  height: 450px;
+  outline: 1px solid grey;
+  background-image: url(../public/sample_bees.jpg);
+  background-size: contain;
+}
+
+.camCont {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
-#signupForm input {
-  margin: 10px;
+.camMenu {
+  margin: 20px;
 }

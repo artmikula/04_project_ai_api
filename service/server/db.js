@@ -4,7 +4,7 @@ const pool = mariadb.createPool({
   host: "mariadb",
   user: "admin",
   password: "pass123",
-  database: "chat_data_db",
+  database: "beekeeping",
 });
 
 module.exports = {
