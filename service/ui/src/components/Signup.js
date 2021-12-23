@@ -33,7 +33,7 @@ function SignupPage({ error, setError, userAdded, setUserAdded }) {
     ) {
       await checkUserExists();
       if (usernameExists === true) {
-        setError("Username not availale");
+        setError("Username not available");
       } else {
         setError(null);
         addUser();

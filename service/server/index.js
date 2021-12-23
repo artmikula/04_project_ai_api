@@ -3,8 +3,6 @@ const cors = require("cors");
 const db = require("./db");
 const app = express();
 const port = 3001;
-const bcrypt = require("bcrypt");
-const saltRounds = 10;
 
 app.use(cors());
 app.use(express.json());
@@ -44,40 +42,21 @@ app.get("/verify/:username", async (req, res) => {
   }
 });
 
-// app.post("/adduser", async (req, res) => {
-//   const user = req.body.username;
-//   const password = req.body.password;
-
-//   let conn;
-//   try {
-//     conn = await db.getConnection();
-//     let query = `INSERT into USERS (username, password) VALUES ("${user}", "${password}")`;
-//     let rows = await conn.query(query);
-//     res.send(rows);
-//   } catch (err) {
-//     throw err;
-//   } finally {
-//     if (conn) return conn.release();
-//   }
-// });
-
-app.post("/adduser", (req, res) => {
-  const user = req.body.username;
+app.post("/adduser", async (req, res) => {
+  const username = req.body.username;
   const password = req.body.password;
 
-  bcrypt.hash(password, saltRounds, (err, hash) => {
-    if (err) {
-      console.log(err);
-    }
-
-    db.query(
-      "INSERT INTO users (username, password) VALUES (?,?)",
-      [username, hash],
-      (err, result) => {
-        console.log(err);
-      },
-    );
-  });
+  let conn;
+  try {
+    conn = await db.getConnection();
+    let query = `INSERT into USERS (username, password) VALUES ("${username}", "${password}")`;
+    let rows = await conn.query(query);
+    res.send(rows);
+  } catch (err) {
+    throw err;
+  } finally {
+    if (conn) return conn.release();
+  }
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
